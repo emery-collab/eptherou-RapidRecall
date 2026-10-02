@@ -1,6 +1,6 @@
 package com.example.eptherou_rapidrecall
 
-data class ClickCounter (
+data class RecallCounter (
     var correct: String,
     var currentNumber: Int,
     var position: Int,

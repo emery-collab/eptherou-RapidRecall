@@ -24,21 +24,21 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun RecallScreen( onRecallButton: (Int) -> IntArray,
-                  clickCounter: ClickCounter,
+                  recallCounter: RecallCounter,
                   state: ScreenState,
                   modifier: Modifier = Modifier
 ) {
     // Set any vars here if I need later
-    var numbers by remember { mutableStateOf(clickCounter.numbers) }
+    var numbers by remember { mutableStateOf(recallCounter.numbers) }
 
     var userGuess by remember { mutableStateOf("") }
-    var position by remember { mutableStateOf(clickCounter.position)}
+    var position by remember { mutableStateOf(recallCounter.position)}
     var correct by remember { mutableStateOf("") }
     var answer by remember { mutableStateOf("") }
 
-    var attempts by remember { mutableStateOf(clickCounter.attempts) }
-    var correctAttempts by remember { mutableStateOf(clickCounter.correctAttempts) }
-    var percentage by remember { mutableStateOf(clickCounter.percentage) }
+    var attempts by remember { mutableStateOf(recallCounter.attempts) }
+    var correctAttempts by remember { mutableStateOf(recallCounter.correctAttempts) }
+    var percentage by remember { mutableStateOf(recallCounter.percentage) }
 
     // When an array of numbers has been generated for play, start displaying them 1 by 1
     LaunchedEffect(numbers) {

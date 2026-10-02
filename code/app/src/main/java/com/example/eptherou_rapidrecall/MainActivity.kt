@@ -16,14 +16,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val recallButton = RecallButton()
-        val clickCounter = ClickCounter("Correct?", 0, 0, 0, 0, "", 0.0)
+        val recallCounter = RecallCounter("Correct?", 0, 0, 0, 0, "", 0.0)
         val state = ScreenState()
         setContent {
             EptherouRapidRecallTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     RecallScreen(
                         onRecallButton = { digits -> recallButton.generateNumbers(digits) },
-                        clickCounter = clickCounter,
+                        recallCounter = recallCounter,
                         state = state,
                         modifier = Modifier.padding(innerPadding)
                     )
